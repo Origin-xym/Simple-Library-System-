@@ -30,12 +30,12 @@ public class EBook extends Book {
 
     @Override
     public String getType(){
-        return "EBook";
+        return "EBOOK";
     }
 
     @Override
     public String getExtraInfo(){
-        return "  文件大小："+fileSizeMB+"MB\n"+"  下载地址："+downLoadUrl;
+        return "文件大小："+fileSizeMB+"MB\n"+"下载地址："+downLoadUrl;
     }
 
     @Override

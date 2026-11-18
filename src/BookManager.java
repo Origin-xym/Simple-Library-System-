@@ -100,7 +100,7 @@ public class BookManager {
                 // 将图书的各个属性用"|"连接成字符串并写入文件
                 // 属性包括：类型、ID、书名、作者、出版社、价格、借阅状态、额外信息
                 writer.write(book.getType()+"|"+ book.getId()+"|"+ book.getBookName()+"|"+ book.getAuthor()
-                        +"|"+ book.getPublisher()+"|"+ book.getPrice()+"|"+ book.isBorrowed()+"|"+ book.getExtraInfo()+"|"+ book.getExtraInfo());
+                        +"|"+ book.getPublisher()+"|"+ book.getPrice()+"|"+ book.isBorrowed()+"|"+ book.getExtraData());
                 // 写入换行符，准备写入下一本书的信息
                 writer.newLine();
             }
@@ -178,10 +178,9 @@ public class BookManager {
  * @param author 作者
  * @param publishere 出版社
  * @param price 价格
- * @param isBorrowed 是否借出
  * @return 更新成功返回true，失败返回false
  */
-    public boolean updateBook(int id,String bookName,String author,String publishere,double price,boolean isBorrowed){
+    public boolean updateBook(int id,String bookName,String author,String publishere,double price){
         // 根据ID查找图书
         Book b = findById(id);
         // 如果图书不存在，返回false
@@ -283,7 +282,7 @@ public class BookManager {
         int n = booklist.size(); // 获取图书列表的大小
         for(int i=0;i<n-1;i++){  // 外层循环，控制排序轮数
             for(int j=0;j<n-i-1;j++){ // 内层循环，控制每轮比较次数
-                Book left = booklist.get(i); // 获取左侧图书
+                Book left = booklist.get(j); // 获取左侧图书
                 Book right = booklist.get(j+1); // 获取右侧图书
             // 判断是否需要交换位置
                 boolean needSwap = asc?left.getPrice()>right.getPrice():left.getPrice()<right.getPrice();

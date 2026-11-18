@@ -31,12 +31,13 @@ public class PaperBook extends Book {
 
     @Override
     public String getType(){
-        return "PaperBook";
+        return "PAPER";
     }
 
     @Override
     public String getExtraInfo(){
-        return "  页数："+pageCount+"\n"+"  位置："+location;
+        return "页数:" + pageCount + "\n"
+                + "馆藏位置:" + location;
     }
 
     @Override
